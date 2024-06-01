@@ -37,7 +37,7 @@ public class Contest399 {
 
         return compression.toString();
     }
-    public long numberOfPairs(int[] nums1, int[] nums2, int k) {
+    public long numberOfPairsV1(int[] nums1, int[] nums2, int k) {
         Map<Integer, Integer> map = new HashMap<>();
         for(int num : nums2){
             map.put(num * k, map.getOrDefault(num * k, 0)+1);

@@ -9,3 +9,10 @@ c
 3src/main/java/org/example/BinarySearchProblems.java,d\7\d740288f58f550bea7529238fd10984d0ce08771
 Y
 )src/main/java/org/example/Contest399.java,e\1\e14c28ce716a0231d0f662f716429c3dee42330a
+\
+,src/main/java/org/example/StackProblems.java,5\c\5c24e56e1abaf35e5c00a43ed811e228c47d932e
+b
+2src/main/java/org/example/TwoPointersProblems.java,6\4\64c4fb8f6e64d71b721553726a678be36221b839
+:
+
+.gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
