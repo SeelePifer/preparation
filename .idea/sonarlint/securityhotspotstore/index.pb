@@ -20,3 +20,7 @@ Y
 )src/main/java/org/example/Contest400.java,2\0\200dcf3dffab150cd7897a60cc290a6a1fb8d4fa
 d
 4src/main/java/org/example/SlidingWindowProblems.java,5\3\53beb4d544027352c53221e8082eb2895aeccbef
+a
+1src/main/java/org/example/LinkedListProblems.java,1\a\1a18991daf7a3920d27757557249ba0ebd7f1ad9
+b
+2src/main/java/org/example/LinkedListProblems2.java,f\0\f0fe3384d8999cb2b57589c01164e5ca244b01f5
