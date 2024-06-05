@@ -1,5 +1,8 @@
 package org.example;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class LinkedListProblems {
     public class ListNode {
      int val;
@@ -115,20 +118,112 @@ public class LinkedListProblems {
         return dummy.next;
     }
     public boolean hasCycle(ListNode head) {
-        if(head == null || head.next == null){
+        if (head == null || head.next == null) {
             return false;
         }
         ListNode slow = head;
         ListNode fast = head.next;
 
-        while(slow != fast){
-            if (fast == null || fast.next == null){
+        while (slow != fast) {
+            if (fast == null || fast.next == null) {
                 return false;
             }
             slow = slow.next;
             fast = fast.next.next;
         }
         return true;
+    }
+    public int findDuplicate(int[] nums) {
+        int slow = nums[0];
+        int fast = nums[0];
+        do{
+            slow = nums[slow];
+            fast = nums[nums[fast]];
+        } while(slow != fast);
+
+        slow = nums[0];
+        while (slow != fast){
+            slow = nums[slow];
+            fast = nums[fast];
+        }
+        return fast;
+    }
+
+    class LRUCache {
+        class Node{
+            int key;
+            int value;
+            Node prev;
+            Node next;
+        }
+        private void addNode(Node node) {
+            node.prev = head;
+            node.next = head.next;
+
+            head.next.prev = node;
+            head.next = node;
+        }
+        private void removeNode(Node node){
+            Node prev = node.prev;
+            Node next = node.next;
+
+            prev.next = next;
+            next.prev = prev;
+        }
+        private Node popTail(){
+            Node res = tail.prev;
+            removeNode(res);
+            return res;
+        }
+        private Map<Integer, Node> cache = new HashMap<>();
+        private int size;
+        private int capacity;
+        private Node head, tail;
+
+        private void moveToHead(Node node){
+            removeNode(node);
+            addNode(node);
+        }
+
+        public LRUCache(int capacity) {
+            this.size = 0;
+            this.capacity = capacity;
+            head = new Node();
+            tail = new Node();
+            head.next = tail;
+            tail.prev = head;
+        }
+
+        public int get(int key) {
+            Node node = cache.get(key);
+            if (node == null){
+                return -1;
+            }
+            moveToHead(node);
+            return node.value;
+        }
+
+        public void put(int key, int value) {
+            Node node = cache.get(key);
+            if(node == null){
+                Node newNode = new Node();
+                newNode.key = key;
+                newNode.value = value;
+
+                cache.put(key, newNode);
+                addNode(newNode);
+
+                ++size;
+                if(size > capacity){
+                    Node tailt = popTail();
+                    cache.remove(tailt.key);
+                    --size;
+                }
+            }else{
+                node.value = value;
+                moveToHead(node);
+            }
+        }
     }
 
 
