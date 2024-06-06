@@ -24,3 +24,7 @@ a
 1src/main/java/org/example/LinkedListProblems.java,1\a\1a18991daf7a3920d27757557249ba0ebd7f1ad9
 b
 2src/main/java/org/example/LinkedListProblems2.java,f\0\f0fe3384d8999cb2b57589c01164e5ca244b01f5
+[
++src/main/java/org/example/TreeProblems.java,e\a\eaa6b69095f19184e5b36aa468bbffbb599c356e
+[
++src/main/java/org/example/HeapProblems.java,8\e\8efb2b4975a6008c3956151eeb1f779f4ba667b0
