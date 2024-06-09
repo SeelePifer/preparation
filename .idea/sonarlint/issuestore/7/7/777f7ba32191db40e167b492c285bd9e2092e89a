@@ -1,12 +1,16 @@
 
-Q
-java:S3740x"/Provide the parametrized type for this generic.(÷©‰ÿÿÿÿÿ8Ş“Èƒô1
-Q
-java:S3740x"/Provide the parametrized type for this generic.(÷©‰ÿÿÿÿÿ8Ş“Èƒô1
-Q
-java:S1066}"/Merge this if statement with the enclosing one.(¸­ãÜùÿÿÿÿ8ã“Èƒô1
-L
-java:S1197q"*Move the array designators [] to the type.(‘Ã‡¥ÿÿÿÿÿ8±†¤ƒô1
-H	java:S106‰"+Replace this use of System.out by a logger.(ïö¸¢8³†¤ƒô1
-H	java:S106Š"+Replace this use of System.out by a logger.(ÓÙæ¹8µ†¤ƒô1
-M	java:S106‹"+Replace this use of System.out by a logger.(Ñª§‡úÿÿÿÿ8¶†¤ƒô1
+w
+java:S1066}"/Merge this if statement with the enclosing one.(¸­ãÜùÿÿÿÿ8…·¸øş1J$aad5f0eb-28d4-4c75-a063-876ff534b5e9
+w
+java:S3740x"/Provide the parametrized type for this generic.(÷©‰ÿÿÿÿÿ8Š·¸øş1J$7537ae41-517b-4b44-964a-73ab85e2ca5e
+w
+java:S3740x"/Provide the parametrized type for this generic.(÷©‰ÿÿÿÿÿ8Š·¸øş1J$21d5e93a-eb88-4ea0-9ca0-8930345295dc
+r
+java:S1197q"*Move the array designators [] to the type.(‘Ã‡¥ÿÿÿÿÿ8É¸øş1J$bbde5f94-315a-49be-8099-2e7073ecd288
+s	java:S106‰"+Replace this use of System.out by a logger.(Å­Ëİúÿÿÿÿ8‘É¸øş1J$fc5e2028-e437-463e-a139-fd68bb200b6a
+l
+java:S1172"(Remove this unused method parameter "s".(ÒÅ„¥8’É¸øş1J$8e47342c-cbe0-47ec-8a9c-e6b3e2fcc48d
+m	java:S106›"+Replace this use of System.out by a logger.(‚¾¼^8”É¸øş1J$2c3dd112-5496-443a-b0bb-7866585100d7
+n	java:S106¡"+Replace this use of System.out by a logger.(ïö¸¢8•É¸øş1J$21595d21-62ce-423a-8d30-3877db2504d4
+n	java:S106¢"+Replace this use of System.out by a logger.(ÓÙæ¹8÷ì¸øş1J$33cf2282-857c-4fc8-b554-f63b42824af4
+s	java:S106£"+Replace this use of System.out by a logger.(Ñª§‡úÿÿÿÿ8Å‰ºøş1J$2a697e97-56ef-40b9-a1f3-cc8969f62d94

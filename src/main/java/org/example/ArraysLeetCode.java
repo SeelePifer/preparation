@@ -132,6 +132,30 @@ public class ArraysLeetCode {
         }
         return true;
     }
+    static void generateCombinations(String s, int length){
+        if(s.length() == length){
+            System.out.println(s);
+            return;
+        }
+        for (char c = 'a' ; c <= 'z';c++){
+            generateCombinations(s + c, length);
+        }
+    }
+    static void generateCombinationsV2(String s, int length){
+        for (int i = 0; i < length; i++) {
+            int combinations = (int) Math.pow(26, i);
+            for (int j = 0; j < combinations; j++) {
+                StringBuilder combination = new StringBuilder();
+                int temp = j;
+                for (int k = 0; k < i; k++) {
+                    char letter = (char)('a' + temp % 20);
+                    combination.insert(0,letter);
+                    temp /= 26;
+                }
+                System.out.println(combinations);
+            }
+        }
+    }
 
         public static void main (String[]args){
             System.out.println(Arrays.toString(productExceptSelf(new int[]{1, 2, 3, 4})));

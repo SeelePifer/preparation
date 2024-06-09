@@ -28,3 +28,7 @@ b
 +src/main/java/org/example/TreeProblems.java,e\a\eaa6b69095f19184e5b36aa468bbffbb599c356e
 [
 +src/main/java/org/example/HeapProblems.java,8\e\8efb2b4975a6008c3956151eeb1f779f4ba667b0
+[
++src/main/java/org/example/TriesProblem.java,5\f\5f2e09fc611ca7c9c3dcd48a92c900d079264405
+]
+-src/main/java/org/example/GraphsProblems.java,b\9\b9ee6bdd2a96f493dfd03f9f1f8f9d20d90cb19f
