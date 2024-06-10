@@ -136,4 +136,72 @@ public class GraphsProblems {
         }
         return time;
     }
+    public List<List<Integer>> pacificAtlantic(int[][] heights) {
+        List<List<Integer>> result = new ArrayList<>();
+        if(heights == null || heights.length == 0 || heights[0].length == 0){
+            return result;
+        }
+        int m = heights.length;
+        int n = heights[0].length;
+        boolean[][] pacific = new boolean[m][n];
+        boolean[][] atlantic = new boolean[m][n];
+
+        for (int i = 0; i < m; i++) {
+            dfsForAtlanticPacific(heights, pacific, Integer.MIN_VALUE, i, 0);
+            dfsForAtlanticPacific(heights, atlantic, Integer.MIN_VALUE, i, n - 1);
+        }
+        for (int i = 0; i < n; i++) {
+            dfsForAtlanticPacific(heights, pacific, Integer.MIN_VALUE, 0, i);
+            dfsForAtlanticPacific(heights, atlantic, Integer.MIN_VALUE, m - 1, i);
+        }
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                if(pacific[i][j] && atlantic[i][j]){
+                    result.add(Arrays.asList(i,j));
+                }
+            }
+        }
+        return result;
+    }
+    private void dfsForAtlanticPacific(int[][] heights, boolean[][] visited, int heigh, int x, int y){
+        if(x < 0 || x >= heights.length || y < 0 || y >= heights[0].length || visited[x][y] || heights[x][y] < heigh){
+            return;
+        }
+        visited[x][y] = true;
+        dfsForAtlanticPacific(heights, visited, heights[x][y], x + 1, y);
+        dfsForAtlanticPacific(heights, visited, heights[x][y], x - 1, y);
+        dfsForAtlanticPacific(heights, visited, heights[x][y], x, y + 1);
+        dfsForAtlanticPacific(heights, visited, heights[x][y], x, y - 1);
+    }
+    public void solve(char[][] board) {
+        if(board == null || board.length == 0) return;
+        int m = board.length;
+        int n = board[0].length;
+
+        for (int i = 0; i < m; i++) {
+            if(board[i][0] == 'O' ) dfsForSolve(board,i,0);
+            if(board[i][n-1] == 'O') dfsForSolve(board, i, n-1);
+        }
+        for (int j = 0; j < n; j++) {
+            if(board[0][j] == 'O') dfsForSolve(board, 0, j);
+            if(board[m-1][j] == 'O') dfsForSolve(board, m-1, j);
+        }
+
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                if(board[i][j] == 'A') board[i][j] = 'O';
+                else if(board[i][j] == 'O') board[i][j] = 'X';
+            }
+        }
+    }
+    private void dfsForSolve(char[][] board, int i, int j){
+        if(i < 0 || i >= board.length || j < 0 || j >= board[0].length || board[i][j] != 'O'){
+            return;
+        }
+        board[i][j] = 'A';
+        dfsForSolve(board, i + 1, j);
+        dfsForSolve(board, i - 1, j);
+        dfsForSolve(board, i, j + 1);
+        dfsForSolve(board, i, j - 1);
+    }
 }

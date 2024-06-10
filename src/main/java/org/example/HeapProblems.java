@@ -155,4 +155,71 @@ public class HeapProblems {
             userMap.get(followerId).unfollow(followeeId);
         }
     }
+    public int findKthLargest(int[] nums, int k) {
+        PriorityQueue<Integer> queue = new PriorityQueue<>(k);
+        for(int num: nums){
+            queue.offer(num);
+            if(queue.size() > k){
+                queue.poll();
+            }
+        }
+        return queue.peek();
+    }
+    public int leastInterval(char[] tasks, int n) {
+        int[] map = new int[26];
+        for (char c: tasks)
+            map[c - 'A']++;
+        PriorityQueue<Integer> queue = new PriorityQueue<>(26, Collections.reverseOrder());
+        for (int f: map) {
+            if (f > 0)
+                queue.add(f);
+        }
+        int time = 0;
+        while (!queue.isEmpty()) {
+            int i = 0;
+            List<Integer> temp = new ArrayList<>();
+            while (i <= n) {
+                if (!queue.isEmpty()) {
+                    if (queue.peek() > 1)
+                        temp.add(queue.poll() - 1);
+                    else
+                        queue.poll();
+                }
+                time++;
+                if (queue.isEmpty() && temp.size() == 0)
+                    break;
+                i++;
+            }
+            for (int l: temp)
+                queue.add(l);
+        }
+        return time;
+    }
+
+    class MedianFinder {
+        private PriorityQueue<Integer> small;
+        private PriorityQueue<Integer> large;
+        public MedianFinder() {
+            small = new PriorityQueue<>(Collections.reverseOrder());
+            large = new PriorityQueue<>();
+        }
+
+        public void addNum(int num) {
+            if(small.size() <= large.size()){
+                large.offer(num);
+                small.offer(large.poll());
+            }else{
+                small.offer(num);
+                large.offer(small.poll());
+            }
+        }
+
+        public double findMedian() {
+            if(small.size() == large.size()){
+                return (small.peek() + large.peek()) / 2.0;
+            }else{
+                return small.peek();
+            }
+        }
+    }
 }

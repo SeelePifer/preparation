@@ -32,3 +32,5 @@ b
 +src/main/java/org/example/TriesProblem.java,5\f\5f2e09fc611ca7c9c3dcd48a92c900d079264405
 ]
 -src/main/java/org/example/GraphsProblems.java,b\9\b9ee6bdd2a96f493dfd03f9f1f8f9d20d90cb19f
+i
+9src/main/java/org/example/DynamicProgrammingProblems.java,2\0\20d2e6ac605f0a16f509eb736f930bfd627489e2
