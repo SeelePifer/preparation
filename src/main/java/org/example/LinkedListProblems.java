@@ -1,7 +1,6 @@
 package org.example;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class LinkedListProblems {
     public class ListNode {
@@ -224,6 +223,51 @@ public class LinkedListProblems {
                 moveToHead(node);
             }
         }
+    }
+    public ListNode mergeKLists(ListNode[] lists) {
+        PriorityQueue<ListNode> queue = new PriorityQueue<>(Comparator.comparing(node -> node.val));
+        for (ListNode node: lists){
+            if(node != null){
+                queue.add(node);
+            }
+        }
+        ListNode dummy = new ListNode(0);
+        ListNode current = dummy;
+        while(!queue.isEmpty()){
+            ListNode node = queue.poll();
+            current.next = node;
+            current = current.next;
+            if(node.next != null){
+                queue.add(node.next);
+            }
+        }
+        return dummy.next;
+    }
+    public ListNode reverseKGroup(ListNode head, int k) {
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
+        ListNode prev = dummy;
+        Stack<ListNode> stack = new Stack<>();
+        while(head != null){
+            stack.push(head);
+            head = head.next;
+
+            if(stack.size() == k){
+                ListNode next = null;
+                while(!stack.isEmpty()){
+                    if(next == null){
+                        next = stack.pop();
+                        prev.next = next;
+                    }else{
+                        next.next = stack.pop();
+                        next = next.next;
+                    }
+                }
+                next.next = head;
+                prev = next;
+            }
+        }
+        return dummy.next;
     }
 
 
