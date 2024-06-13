@@ -34,3 +34,5 @@ b
 -src/main/java/org/example/GraphsProblems.java,b\9\b9ee6bdd2a96f493dfd03f9f1f8f9d20d90cb19f
 i
 9src/main/java/org/example/DynamicProgrammingProblems.java,2\0\20d2e6ac605f0a16f509eb736f930bfd627489e2
+c
+3src/main/java/org/example/BacktrackingProblems.java,f\2\f2ea93139c91386962d3e17bb45e7d4caf4bbb8f
