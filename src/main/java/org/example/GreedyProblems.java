@@ -1,7 +1,6 @@
 package org.example;
 
-import java.util.Stack;
-import java.util.TreeMap;
+import java.util.*;
 
 public class GreedyProblems {
 
@@ -96,6 +95,33 @@ public class GreedyProblems {
             if(star.isEmpty() || star.pop() < left.pop()) return false;
         }
         return true;
+    }
+    public boolean mergeTriplets(int[][] triplets, int[] target) {
+        int[] result = new int[3];
+        for (int [] triplet : triplets){
+            if(triplet[0] <= target[0] && triplet[1] <= target[1] && triplet[2] <= target[2]){
+                result[0] = Math.max(result[0], triplet[0]);
+                result[1] = Math.max(result[1], triplet[1]);
+                result[2] = Math.max(result[2], triplet[2]);
+            }
+        }
+        return Arrays.equals(result, target);
+    }
+    public List<Integer> partitionLabels(String s) {
+        int[] last = new int[26];
+        for (int i = 0; i < s.length(); i++) {
+            last[s.charAt(i) - 'a'] = i;
+        }
+        int start = 0, end = 0;
+        List<Integer> result = new ArrayList<>();
+        for (int i = 0; i < s.length(); i++) {
+            end = Math.max(end, last[s.charAt(i) - 'a']);
+            if(i == end){
+                result.add(end - start + 1);
+                start = end + 1;
+            }
+        }
+        return result;
     }
 
 }

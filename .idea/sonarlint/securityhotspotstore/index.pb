@@ -38,3 +38,9 @@ c
 3src/main/java/org/example/BacktrackingProblems.java,f\2\f2ea93139c91386962d3e17bb45e7d4caf4bbb8f
 ]
 -src/main/java/org/example/GreedyProblems.java,7\b\7b2c04d8d86fd758d6f96884229bf6f2c7a4b0f6
+]
+-src/main/java/org/example/AdvancedGraphs.java,c\a\ca03512db21455c15e4cd2f5fc84eae44cb3d794
+e
+5src/main/java/org/example/BitManipulationProblem.java,3\a\3ae09d817fc78916d2bfaca881b5de9d5dc464ce
+_
+/src/main/java/org/example/IntervalProblems.java,0\5\0583b4704ee0741ce9da9bc00dae65394a2a1770
